@@ -21,6 +21,14 @@ const poruke = [
     vazno: true
   }
 ]
+
+const Poruka = ({poruka}) => {
+  return(
+      <div>
+        {poruka.sadrzaj}
+      </div>
+  )
+}
 const App = (props) => {
   const { poruke } = props
 
@@ -28,9 +36,7 @@ const App = (props) => {
     <div>
       <h1>Poruke</h1>
       <ul>
-        <li>{poruke[0].sadrzaj}</li>
-        <li>{poruke[1].sadrzaj}</li>
-        <li>{poruke[2].sadrzaj}</li>
+        {poruke.map(poruka => <li key={poruka.id}>{poruka.sadrzaj}</li>)}
       </ul>
     </div>
   )
